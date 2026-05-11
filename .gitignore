@@ -1,0 +1,12 @@
+# Python virtualenv
+.env/
+__pycache__/
+*.pyc
+*.pyo
+
+# Runtime config (generado automáticamente por la companion app)
+companion_app/buspirate_config.json
+
+# OS
+.DS_Store
+Thumbs.db
