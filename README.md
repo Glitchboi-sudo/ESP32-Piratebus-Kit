@@ -114,8 +114,8 @@ No necesitas ser experto. Si ves algo mejorable, **cuéntanos o abre un Pull Req
 
 ## Créditos
 
-Proyecto basado en [ESP32-Bus-Pirate](https://github.com/geo-tp/ESP32-Bus-Pirate) hecho por _[geo-tp](https://github.com/geo-tp)_
-Inspirado en [HackerBox 0124: Bus Driver](https://hackerboxes.com)
-Diseñado / Modificado por:
+- Proyecto basado en [ESP32-Bus-Pirate](https://github.com/geo-tp/ESP32-Bus-Pirate) hecho por [geo-tp](https://github.com/geo-tp)
+- Inspirado en [HackerBox 0124: Bus Driver](https://hackerboxes.com)
 
-- [Glitchboi](https://github.com/TU_USUARIO)
+Diseñado / Modificado por:
+- [Glitchboi](https://www.linkedin.com/in/erik-alc%C3%A1ntara-covarrubias-29a97628a)
