@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-ESP32 Bus Pirate Companion GUI
-Interfaz gráfica moderna para facilitar el uso del Bus Pirate
+ESP32 Bit Pirate Companion GUI
+Interfaz gráfica moderna para facilitar el uso del Bit Pirate
 """
 
 import customtkinter as ctk
@@ -26,7 +26,7 @@ from bus_pirate.bus_pirate_wifi import BusPirateWifi
 CONFIG_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "buspirate_config.json")
 
 # GitHub releases API endpoint
-FIRMWARE_API_URL = "https://api.github.com/repos/geo-tp/ESP32-Bus-Pirate/releases"
+FIRMWARE_API_URL = "https://api.github.com/repos/geo-tp/ESP32-Bit-Pirate/releases"
 
 # Pin assignments per module and port
 MODULE_PINS = {
@@ -388,7 +388,7 @@ ctk.set_default_color_theme("blue")
 class BusPirateGUI:
     def __init__(self):
         self.root = ctk.CTk()
-        self.root.title("ESP32 Bus Pirate Companion")
+        self.root.title("ESP32 Bit Pirate Companion")
         self.root.geometry("1400x900")
 
         self.bp: Optional[Union[BusPirate, BusPirateWifi]] = None
@@ -514,7 +514,7 @@ class BusPirateGUI:
         self.wifi_conn_frame = ctk.CTkFrame(connection_frame, fg_color="transparent")
         # (not packed — shown on demand)
 
-        ctk.CTkLabel(self.wifi_conn_frame, text="IP del Bus Pirate:",
+        ctk.CTkLabel(self.wifi_conn_frame, text="IP del Bit Pirate:",
                      font=ctk.CTkFont(size=12)).pack(side="left", padx=(0, 6))
 
         ctk.CTkEntry(
@@ -694,7 +694,7 @@ class BusPirateGUI:
         self._port_section(tab, "ethernet", 2)
 
     def create_modes_tab(self):
-        """Quick-select buttons for all official ESP32 Bus Pirate modes."""
+        """Quick-select buttons for all official ESP32 Bit Pirate modes."""
         tab = self.shortcut_tabs.add("Modos")
         tab.grid_columnconfigure(0, weight=1)
         tab.grid_rowconfigure(2, weight=2)   # scroll frame de botones
@@ -1044,7 +1044,7 @@ class BusPirateGUI:
             return
         try:
             with open(path, 'w', encoding='utf-8') as f:
-                f.write("# ESP32 Bus Pirate — Session Log\n")
+                f.write("# ESP32 Bit Pirate — Session Log\n")
                 f.write(f"# Fecha: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
                 f.write(f"# Puerto: {self.port_var.get()}\n")
                 f.write("# " + "─" * 58 + "\n\n")
@@ -1060,7 +1060,7 @@ class BusPirateGUI:
 
         ctk.CTkLabel(tab, text="Flash Firmware",
                      font=ctk.CTkFont(size=14, weight="bold")).pack(pady=(12, 0))
-        ctk.CTkLabel(tab, text="ESP32 Bus Pirate · DevKit",
+        ctk.CTkLabel(tab, text="ESP32 Bit Pirate · DevKit",
                      font=ctk.CTkFont(size=11), text_color="#A0A0A0").pack(pady=(0, 8))
 
         # ── Sección: Archivo local ──────────────────────────────────────────
@@ -1455,7 +1455,7 @@ class BusPirateGUI:
         self.connect_btn.configure(text="Conectar", fg_color="#4CAF50", hover_color="#45A049")
         self.status_label.configure(text="● Desconectado", text_color="#FF6B6B")
         self.conn_type_btn.configure(state="normal")
-        self.append_output("Desconectado del Bus Pirate\n", "info")
+        self.append_output("Desconectado del Bit Pirate\n", "info")
 
     # ── Read loop (serial + WiFi) ─────────────────────────────────────────────
 
@@ -1503,7 +1503,7 @@ class BusPirateGUI:
     def send_command(self):
         cmd = self.input_entry.get().strip()
         if not self.connected or not self.bp:
-            self.append_output("No conectado al Bus Pirate\n", "error")
+            self.append_output("No conectado al Bit Pirate\n", "error")
             return
 
         if cmd:
